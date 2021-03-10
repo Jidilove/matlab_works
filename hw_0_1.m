@@ -17,5 +17,25 @@ det(a*b);
 A=rand(5,3);
 B=rand(2,3);
 Z=zeros(5,2);
-E=eye(2,2);
-C=(A Z; 
+E=eye(2);
+C=[A Z; B E];
+C(:,5)
+%% 
+A=rand(6,3);
+B=A(1:3,1:3);
+det(B)
+if det(B)~=0
+    Bobr=inv(B);
+end
+B*Bobr
+%% 
+A=rand(3,5);
+B=A(:,1:3)
+det(B)
+B(1,1:3)=B(2,1:3);
+B
+det(B)
+%% 
+A=rand(20);
+b=eig(A)
+b=sort(b)
