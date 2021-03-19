@@ -36,6 +36,38 @@ B(1,1:3)=B(2,1:3);
 B
 det(B)
 %% 
-A=rand(20);
-b=eig(A)
+A=randi(10,20,20);
+b=eig(A);
 b=sort(b)
+%%
+n=4;
+A=rand(n);
+[V,D]=eig(A)
+A*V
+V*D
+%%
+%n=input();
+n=randi(10,1,1);
+v1=ones(n-1,1);
+v2=-2*ones(n,1);
+A=diag(v2)+diag(v1,-1)+diag(v1,1);
+B=zeros(n);
+B(1,n)=1;
+B(n,1)=1;
+D=[A B;B A]
+%%
+A=rand(8)
+x=max(A)
+y=max(A')
+z=max(x)
+k=1;
+for i=1:8
+    for j=1:8
+        if A(i,j)>0.2;
+            B(k,1)=i;
+            B(k,2)=j;
+            k=k+1;
+        end;
+    end;
+end;
+B
